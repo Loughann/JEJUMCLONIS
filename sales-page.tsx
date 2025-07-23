@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Check } from "lucide-react"
 
 interface SalesPageProps {
-  onPrevious: () => void
+  onPrevious?: () => void // Tornar opcional, pois pode não ser usado em todos os contextos
 }
 
 export default function SalesPage({ onPrevious }: SalesPageProps) {
@@ -38,7 +38,17 @@ export default function SalesPage({ onPrevious }: SalesPageProps) {
   ]
 
   const handleCheckout = () => {
-    window.location.href = "https://pay.cakto.com.br/7yhk9sm_478616"
+    const baseUrl = "https://pay.cakto.com.br/7yhk9sm_478616"
+    // Captura os parâmetros de consulta da URL atual
+    const currentQueryParams = window.location.search
+
+    // Concatena os parâmetros à URL base do checkout
+    // Verifica se já existem parâmetros na URL base para adicionar '&' ou '?'
+    const checkoutUrl = baseUrl.includes("?")
+      ? `${baseUrl}&${currentQueryParams.substring(1)}` // Remove o '?' inicial e concatena
+      : `${baseUrl}${currentQueryParams}` // Adiciona diretamente se não houver '?'
+
+    window.location.href = checkoutUrl
   }
 
   return (
@@ -339,24 +349,27 @@ export default function SalesPage({ onPrevious }: SalesPageProps) {
 
           <h3 className="text-lg font-bold text-gray-900 mb-4">Garantia de reembolso</h3>
           <p className="text-gray-600 text-sm leading-relaxed">
-            {"A compra deste material é totalmente sem risco para você. Se ele não atender às suas expectativas nos primeiros 30 dias após a compra, nós reembolsaremos todo o valor que você pagou, sem fazer perguntas. Basta enviar um e-mail para o suporte em \ncontato@jejumsecatudo.com"}
+            {
+              "A compra deste material é totalmente sem risco para você. Se ele não atender às suas expectativas nos primeiros 30 dias após a compra, nós reembolsaremos todo o valor que você pagou, sem fazer perguntas. Basta enviar um e-mail para o suporte em \ncontato@jejumsecatudo.com"
+            }
           </p>
         </div>
       </div>
 
       {/* Custom CSS for pulse animation */}
       <style jsx>{`
-      @keyframes pulse-custom {
-        0%, 100% {
-          transform: scale(1);
-          opacity: 1;
+        @keyframes pulse-custom {
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 0.9;
+          }
         }
-        50% {
-          transform: scale(1.05);
-          opacity: 0.9;
-        }
-      }
-    `}</style>
+      `}</style>
     </div>
   )
 }
