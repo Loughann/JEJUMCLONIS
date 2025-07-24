@@ -48,7 +48,7 @@ export default function SizeSelection({ onNext, onPrevious }: SizeSelectionProps
     <div className="bg-gray-50 px-4 py-6">
       {/* Main content */}
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl font-bold text-gray-900 mb-8">Escolha o tamanho que você quer usar?</h1>
+        <h1 className="text-xl font-extrabold text-gray-900 mb-8 text-center">Escolha o tamanho que você quer usar?</h1>
 
         {/* Size options - Grid layout */}
         <div className="grid grid-cols-2 gap-4">
@@ -56,8 +56,10 @@ export default function SizeSelection({ onNext, onPrevious }: SizeSelectionProps
             <button
               key={option.id}
               onClick={() => onNext({ size: option.id })}
-              className={`bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 ${
-                selectedSize === option.id ? "border-orange-500 bg-orange-50" : "border-gray-100 hover:border-gray-200"
+              className={`bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] ${
+                selectedSize === option.id
+                  ? "border-green-500 bg-green-50 shadow-green-200"
+                  : "border-green-300 hover:border-green-400"
               }`}
             >
               <div className="flex flex-col items-center space-y-3">

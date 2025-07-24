@@ -61,7 +61,7 @@ export default function FoodPreferences({ onNext, onPrevious }: FoodPreferencesP
     <div className="bg-gray-50 px-4 py-6">
       {/* Main content */}
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl font-bold text-gray-900 mb-8 text-center">Escolha as comidas que você gosta</h1>
+        <h1 className="text-xl font-extrabold text-gray-900 mb-8 text-center">Escolha as comidas que você gosta</h1>
 
         {/* Food categories */}
         <div className="space-y-6 mb-8">
@@ -79,10 +79,10 @@ export default function FoodPreferences({ onNext, onPrevious }: FoodPreferencesP
                   <button
                     key={food}
                     onClick={() => toggleFood(food)}
-                    className={`bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 ${
+                    className={`bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] ${
                       selectedFoods.includes(food)
-                        ? "border-orange-500 bg-orange-50"
-                        : "border-gray-100 hover:border-gray-200"
+                        ? "border-green-500 bg-green-50 shadow-green-200"
+                        : "border-green-300 hover:border-green-400"
                     }`}
                   >
                     <span className="text-gray-900 font-medium text-base">{food}</span>

@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react" // Importar useEffect
 import { ArrowLeft } from "lucide-react"
+import Image from "next/image"
 
 // Import all quiz components
 import AgeSelection from "./age-selection"
@@ -154,18 +155,27 @@ export default function QuizMain() {
   console.log("Rendering component for step:", currentStep, "Component:", CurrentComponent?.name)
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-6">
+    <div className="min-h-screen bg-gray-50 px-4 py-2">
       {/* Global Header */}
-      <div className="flex items-center justify-between mb-8">
-        <button className="p-2" onClick={handlePrevious} disabled={currentStep === 0}>
+      <div className="flex items-center justify-between mb-2">
+        <button className="p-2 flex-shrink-0" onClick={handlePrevious} disabled={currentStep === 0}>
           <ArrowLeft className="w-6 h-6 text-gray-600" />
         </button>
-        <div className="text-lg font-bold text-black">🔥 JEJUM SECA TUDO</div>
-        <div className="w-10"></div> {/* Spacer for centering */}
+        <div className="flex items-center justify-center flex-1 px-4">
+          <Image
+            src="/images/jejum-seca-tudo-logo.webp"
+            alt="Jejum Seca Tudo"
+            width={800}
+            height={267}
+            className="max-w-full max-h-32 w-auto h-auto object-contain"
+            priority
+          />
+        </div>
+        <div className="w-10 flex-shrink-0"></div> {/* Spacer for centering */}
       </div>
 
       {/* Global Progress indicator */}
-      <div className="flex items-center mb-8">
+      <div className="flex items-center mb-4">
         <div
           className="w-full h-2 bg-green-500 rounded-full transition-width duration-700 ease-out" // Adicionado transition para suavizar a animação
           style={{ width: `${visualProgressPercentage}%` }} // Usar o progresso visual

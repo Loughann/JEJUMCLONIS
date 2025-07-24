@@ -41,10 +41,10 @@ export default function WorkRoutine({ onNext, onPrevious }: WorkRoutineProps) {
             <button
               key={option.id}
               onClick={() => onNext({ workRoutine: option.id })}
-              className={`w-full bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 ${
+              className={`w-full bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] ${
                 selectedRoutine === option.id
-                  ? "border-orange-500 bg-orange-50"
-                  : "border-gray-100 hover:border-gray-200"
+                  ? "border-green-500 bg-green-50 shadow-green-200"
+                  : "border-green-300 hover:border-green-400"
               }`}
             >
               <div className="text-center">

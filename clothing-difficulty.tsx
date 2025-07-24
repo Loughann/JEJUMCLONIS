@@ -22,7 +22,7 @@ export default function ClothingDifficulty({ onNext, onPrevious }: ClothingDiffi
     <div className="bg-gray-50 px-4 py-6">
       {/* Main content */}
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl font-bold text-gray-900 mb-8 text-center">
+        <h1 className="text-xl font-extrabold text-gray-900 mb-8 text-center">
           Você tem dificuldade para escolher suas roupas com seu peso atual?
         </h1>
 
@@ -32,7 +32,7 @@ export default function ClothingDifficulty({ onNext, onPrevious }: ClothingDiffi
             <button
               key={option.id}
               onClick={() => onNext({ clothingDifficulty: option.id })}
-              className="w-full bg-white rounded-2xl p-4 shadow-md border-2 border-gray-100 hover:border-gray-200 transition-all duration-200"
+              className="w-full bg-white rounded-2xl p-4 shadow-md border-2 border-green-300 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
             >
               <div className="flex items-center justify-between">
                 <span className="text-gray-900 font-medium text-lg">{option.text}</span>

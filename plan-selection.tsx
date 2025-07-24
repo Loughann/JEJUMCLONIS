@@ -51,8 +51,10 @@ export default function PlanSelection({ onNext, onPrevious }: PlanSelectionProps
             <button
               key={plan.id}
               onClick={() => setSelectedPlan(plan.id)}
-              className={`bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 ${
-                selectedPlan === plan.id ? "border-green-500" : "border-gray-100"
+              className={`bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] ${
+                selectedPlan === plan.id
+                  ? "border-green-500 bg-green-50 shadow-green-200"
+                  : "border-green-300 hover:border-green-400"
               }`}
             >
               <div className="flex flex-col items-center space-y-3">

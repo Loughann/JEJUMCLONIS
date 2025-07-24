@@ -38,7 +38,7 @@ export default function LunchTiming({ onNext, onPrevious }: LunchTimingProps) {
     <div className="bg-gray-50 px-4 py-6">
       {/* Main content */}
       <div className="max-w-md mx-auto">
-        <h1 className="text-xl font-bold text-gray-900 mb-8 text-center">Quando você costuma almoçar?</h1>
+        <h1 className="text-xl font-extrabold text-gray-900 mb-8 text-center">Quando você costuma almoçar?</h1>
 
         {/* Time options */}
         <div className="space-y-4">
@@ -46,8 +46,10 @@ export default function LunchTiming({ onNext, onPrevious }: LunchTimingProps) {
             <button
               key={option.id}
               onClick={() => onNext({ lunchTiming: option.id })}
-              className={`w-full bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 ${
-                selectedTime === option.id ? "border-orange-500 bg-orange-50" : "border-gray-100 hover:border-gray-200"
+              className={`w-full bg-white rounded-2xl p-4 shadow-md border-2 transition-all duration-200 hover:shadow-lg hover:scale-[1.02] ${
+                selectedTime === option.id
+                  ? "border-green-500 bg-green-50 shadow-green-200"
+                  : "border-green-300 hover:border-green-400"
               }`}
             >
               <div className="flex items-center justify-between">

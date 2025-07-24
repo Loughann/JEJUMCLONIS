@@ -34,7 +34,7 @@ export default function DesiredWeightInput({ onNext, onPrevious }: DesiredWeight
               value={desiredWeight}
               onChange={(e) => setDesiredWeight(e.target.value)}
               placeholder="Digite aqui em Kg"
-              className="w-full bg-white rounded-2xl p-4 pl-12 shadow-md border-2 border-gray-100 focus:border-orange-500 focus:outline-none text-gray-900 font-medium"
+              className="w-full bg-white rounded-2xl p-4 pl-12 shadow-md border-2 border-green-300 focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-200 text-gray-900 font-medium transition-all duration-200"
             />
           </div>
         </div>

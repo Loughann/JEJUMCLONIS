@@ -77,7 +77,7 @@ export default function DietaryRestrictions({ onNext, onPrevious }: DietaryRestr
             <button
               key={restriction.id}
               onClick={() => toggleRestriction(restriction.id)}
-              className="w-full bg-white rounded-2xl p-4 shadow-md border-2 border-gray-100 hover:border-gray-200 transition-all duration-200"
+              className="w-full bg-white rounded-2xl p-4 shadow-md border-2 border-green-300 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
             >
               <div className="flex items-center justify-between">
                 <div className="text-3xl">{restriction.icon}</div>

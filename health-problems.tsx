@@ -57,7 +57,7 @@ export default function HealthProblems({ onNext, onPrevious }: HealthProblemsPro
             <button
               key={option.id}
               onClick={() => toggleProblem(option.id)}
-              className="w-full bg-white rounded-2xl p-4 shadow-md border-2 border-gray-100 hover:border-gray-200 transition-all duration-200"
+              className="w-full bg-white rounded-2xl p-4 shadow-md border-2 border-green-300 hover:border-green-400 hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
             >
               <div className="flex items-center justify-between">
                 <div className="w-16 h-16 rounded-xl overflow-hidden bg-orange-100 flex-shrink-0">
